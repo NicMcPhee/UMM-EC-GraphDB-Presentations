@@ -117,10 +117,10 @@
 	\item Individuals form a population.
 	\item Transformations
 		\begin{itemize}
-		\item Crossover (XO): sexual reproduction (root and non-root)
-		\item Mutation: subtrees altered
-		\item Reproduction: asexual reproduction
-		\item Elitism: reproduction based on fitness
+		\item Crossover (XO)
+		\item Mutation
+		\item Reproduction
+		\item Elitism
 		\end{itemize}
 	\item Transformations occur over a specified amount of generations.
 	\item Individuals are rated by their fitness.
@@ -133,6 +133,18 @@
   \end{column}
   \end{columns}
 
+\end{frame}
+
+\begin{frame}
+  \frametitle{Transformations}
+
+		\begin{itemize}
+		\item[Crossover (XO)] sexual reproduction (root and non-root)
+		\item[Mutation] subtrees altered
+		\item[Reproduction] asexual reproduction
+		\item[Elitism] reproduction based on fitness
+		\end{itemize}
+\includegraphics[width=.95\textwidth]{XO_path_example.pdf}
 \end{frame}
 
 \subsection{Symbolic Regression and Fitness}
@@ -226,6 +238,8 @@
 
 \section[Results]{Results}
 
+\subsection[Questions]{Questions}
+
 \begin{frame}
 \frametitle{Questions Asked}
 \begin{enumerate}
@@ -235,6 +249,8 @@
 \item \emph{How many individuals in the initial generation have any root parent descendants in the final generation?}
 \end{enumerate}
 \end{frame}
+
+\subsection[Improved Transformations]{Improved Transformations}
 
 \begin{frame}
 \frametitle{Percentage of Improved Transformations}
@@ -255,6 +271,8 @@
 \end{columns}
 \end{frame}
 
+\subsection[Fitness Graph]{Fitness Over Time}
+
 \begin{frame}
 \frametitle{Fitness Over Time}
 \emph{What does the fitness of the ``winning'' root parent ancestry line look like over time?}
@@ -263,36 +281,14 @@
 \end{center}
 \end{frame}
 
-\subsection[Empirical results]{Empirical comparison of IFD, N-gram GP, and standard GP}
+\subsection[Common Ancestor]{Common Ancestor}
 
 \begin{frame}
-  \frametitle{Empirical comparison of IFD, N-gram GP, \& TinyGP}
-  
-  \begin{columns}[t]
-  \begin{column}{0.45\textwidth}
-  Compare IFD, regular N-gram GP, and standard sub-tree XO GP (TinyGP)
-  \linespace
-  \begin{itemize}
-	\item 11 different symbolic regression problems
-	\item 100 independent runs for each system + problem + parameter set
-	\item Various parameter settings (e.g., different block sizes)
-  \end{itemize}
-  \end{column}
+\frametitle{Common Ancestor}
+\begin{center}
+\includegraphics[height=0.85\textheight]{subset_confluence_trimmed}
+\end{center}
 
-  \begin{column}{0.45\textwidth}
-  2 register machine with $+, -, \times$, protected division, and swap
-  
-  \linespace
-  
-  Normalize the clock:
-  \begin{itemize}
-  	\item Count instruction executions
-	\item Allow 50M instruction evaluations per run
-	\item Store machine state so only new block has to be executed in IFD
-  \end{itemize}
-  
-  \end{column}
-  \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -371,26 +367,21 @@
 \frametitle{Conclusions}
 
 \begin{itemize}
-  \item Added developmental plasticity to N-gram GP using Incremental Fitness-based Development (IFD).
+\item We can gather internal data!
+\item Provides more in depth information than statistical summaries. 
+\item Support for hypotheses.
 \end{itemize}
+\linespace
+\linespace
+\linespace
+\linespace
 
+Future work
 \begin{itemize}
-  \item IFD consistently improved N-gram GP performance on suite of test problems.
-  
-  \linespace
-  
-  \item ``Knocking out'' IFD shows it's valuable in all phases, even if it wasn't used earlier in a run.
-
-  \linespace
-  
-  \item IFD generates more complex, less converged probability tables.
-  \item IFD generates more modules/loops \& uses more low-probability paths.
+\item Trying different setup configurations.
+\item Enforcing the root parent to have better fitness in XO.
+\item Dynamically change parameters.
 \end{itemize}
-
-\begin{itemize}
-  \item Currently exploring applications to dynamic environments.
-\end{itemize}
-
 \end{frame}
 
 \begin{frame}
@@ -404,7 +395,6 @@
 	Contact:  
 	\begin{itemize}
 		\item \texttt{mcphee@morris.umn.edu}
-		\item \url{http://www.morris.umn.edu/~mcphee/}
 	\end{itemize}
 	
 	\linespace
