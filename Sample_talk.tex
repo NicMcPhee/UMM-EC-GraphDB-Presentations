@@ -193,10 +193,10 @@
 
 \begin{frame}
 	\frametitle{Cypher}
-	
 	Neo4j's query language is Cypher.
-	\linebreak
-	\linebreak
+	\begin{columns}
+	\begin{column}{0.40\textwidth}
+
 	Fundamental elements of Cypher queries:
 		\begin{itemize}
 		\item START
@@ -204,7 +204,21 @@
 		\item MATCH
 		\item WHERE
 		\end{itemize}
+	\end{column}
+	\begin{column}{0.60\textwidth}
 
+	\includegraphics[width=.95\textwidth]{parents.pdf}
+	\linebreak
+	\emph{
+START parent=node(43)
+\linebreak
+MATCH (parent)-[:PARENTOF]->(child)
+\linebreak
+RETURN parent, child;
+}
+
+	\end{column}	
+	\end{columns}
 \end{frame}
 
 \section[Setup]{Experimental Setup}
@@ -238,13 +252,13 @@
 
 \section[Results]{Results}
 
-\subsection[Questions]{Questions}
+\subsection[Questions Asked]{Questions Asked}
 
 \begin{frame}
 \frametitle{Questions Asked}
 \begin{enumerate}
 \item \emph{How often do mutations improve fitness? Also, how often do crossovers improve fitness, where the root parent is more fit than the non-root parent, and vice versa?}
-\item 
+\item \emph{What does the fitness of the ``winning'' root parent ancestry line look like over time?}
 \item \emph{Do a group of individuals have a common root parent ancestor and what is the latest generation where such an ancestor occurs?}
 \item \emph{How many individuals in the initial generation have any root parent descendants in the final generation?}
 \end{enumerate}
@@ -285,79 +299,10 @@
 
 \begin{frame}
 \frametitle{Common Ancestor}
+\emph{Do a group of individuals have a common root parent ancestor and what is the latest generation where such an ancestor occurs?}
 \begin{center}
-\includegraphics[height=0.85\textheight]{subset_confluence_trimmed}
+\includegraphics[height=0.75\textheight]{subset_confluence_trimmed}
 \end{center}
-
-\end{frame}
-
-\begin{frame}
-  \frametitle{Success rates on 11 test problems}
-  
-\begin{center}
-\begin{tabular}{llrrr}
-	& & \multicolumn{3}{c}{\emph{Successes out of 100 runs}} \\
-	\textbf{Label} & \textbf{Function} & \textbf{TinyGP} & \textbf{N-gram} & \textbf{IFD} \\ \hline
-	\tabletie{P1} & \tabletie{$x + x^2 + x^3 + x^4 + x^5$} & \tabletie{100} & \tabletie{100} & \tabletie{100} \\
-	\tabletie{P2} & \tabletie{$-x-2x^2+x^3$} & \tabletie{100} & \tabletie{100} & \tabletie{100} \\
-	P3 & $1.009 + 1.419x + x^2$ & \tablewin{100} & \tablelose{61} & \tablewin{100} \\
-	\tabletie{P4} & \tabletie{$6+x^2+3x^3+8x^5$} & \tabletie{0} & \tabletie{0} & \tabletie{0} \\ \hline
-	\tabletie{P5} & \tabletie{$6$} & \tabletie{100} & \tabletie{100} & \tabletie{100} \\ % P4d0f
-	P6 & $6+x^2$ & \tablewin{100} & \tablelose{10} & \tablewin{94} \\ % P4d2f
-	P7 & $6 + x^2 + 3 x^3$ & \tablewin{85} & \tablelose{0} & \tablelose{1} \\ \hline % P4d3f
-	\tabletie{P8} & \tabletie{$8x^5$} & \tabletie{100} & \tabletie{100} & \tabletie{100} \\ % P4d5b
-	P9 & $3x^3+8x^5$ & \tablelose{22} & \tablemid{55} & \tablewin{100} \\ % P4d3b
-	P10 & $x^2+3x^3+8x^5$ & \tablewin{100} & \tablelose{7} & \tablemid{80} \\ \hline % P4d2b
-	Sine & $sin(x)$ & \tablelose{0} & \tablelose{1} & \tablewin{63} \\ \hline
-\end{tabular}
-\end{center}
-\end{frame}
-
-\begin{frame}
-\frametitle{IFD wins either way}
-
-\begin{columns}
-\begin{column}{0.6\textwidth}
-
-\begin{itemize}
-	\item IFD generates low-error individuals from tables evolved with IFD \textbf{and without IFD}.
-	\linespace
-	\item IFD's local search is valuable in all phases of the process, even if it wasn't used previously.
-	\linespace
-	\item N-gram GP isn't able to work effectively with the more complex probability tables that IFD generates.
-\end{itemize}
-\end{column}
-
-\begin{column}{0.02\textwidth}
-\end{column}
-
-\begin{column}{0.5\textwidth}
-
-\includegraphics[width=0.915\textwidth]{ErrorsGenedProgsFromIfdMatrix.pdf}
-
-\includegraphics[width=0.915\textwidth]{ErrorsGenedProgsFromNonIfdMatrix.pdf}
-
-\end{column}
-\end{columns}
-
-\end{frame}
-
-\subsection[Modularity]{Modularity and repeated structures in IFD}
-
-\begin{frame}
-  \frametitle{Structural differences and modularity}
-  
-  Standard N-gram GP tends to converge to a small set of loops with high probability edges.
-
-  \begin{center}
-  \includegraphics[width=0.8\textwidth]{duplication_graph_40068231_trimmed_smallNodes_coloredEdges_crop.pdf}
-  \end{center}
-  
-      With IFD there is less convergence, more variety and complexity in the modular structure, \& greater use of low probability edges.
-  
-  \begin{center}
-    \includegraphics[width=\textwidth]{duplication_graph_12454239_trimmed_smallNodes_coloredEdges_crop.pdf}
-    \end{center}
 
 \end{frame}
 
@@ -392,8 +337,10 @@ Future work
 	\linespace
 	\linespace
 	
-	Contact:  
+	Contacts:  
 	\begin{itemize}
+		\item \texttt{donat056@morris.umn.edu}
+		\item \texttt{dramd002@morris.umn.edu}
 		\item \texttt{mcphee@morris.umn.edu}
 	\end{itemize}
 	
