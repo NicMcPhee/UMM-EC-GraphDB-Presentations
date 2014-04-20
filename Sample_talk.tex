@@ -82,10 +82,10 @@
   \begin{column}{0.6\textwidth}
   \begin{itemize}
 	\item Genetic programming demonstrated to be effective for a variety of applications.
-	\item Difficult to determine why this is true.
-	\item Databases allow us to examine internal interactions of a run.
+	\item Difficult to determine how this process works.
+	\item Databases allow examination of the internal interactions of a run.
 	\item Graph databases more efficient at this task than relational databases.
-	\item Use this knowledge for improving genetic programming.
+	\item This knowledge may be used to improve genetic programming algorithms.
   \end{itemize}
   \end{column}
   \begin{column}{0.4\textwidth}
@@ -116,7 +116,7 @@
   \end{center}
  
   \begin{itemize}
-  	\item Genetic Programmings is based upon biological principles.
+  	\item Genetic Programming is based upon biological principles.
 	\item Individuals form a population.
 	\item Transformations
 		\begin{itemize}
@@ -125,18 +125,15 @@
 		\item Reproduction
 		\item Elitism
 		\end{itemize}
-	\item Transformations occur over a specified amount of generations.
+	\item Transformations occur over a specified number of generations.
 	\item Individuals are rated by their fitness.
   \end{itemize}
-
- 
-
 \end{frame}
 
 \begin{frame}
   \frametitle{Transformations}
 
-		\begin{description}
+		\begin{description}[align=left, leftmargin=*]
 		\item[Crossover (XO)] sexual reproduction (root and non-root)
 		\item[Mutation] subtrees altered
 		\item[Reproduction] asexual reproduction
@@ -161,12 +158,12 @@
 	Fitness determines individual's distance from target function.
 	\begin{itemize}
 		\item Lower the fitness, the better the individual.
-		\item A zero fitness would exactly match test data.
+		\item A fitness of zero would exactly match test data.
 	\end{itemize}
 	
 	\linespace 
 	
-	The goal of GP is to evolve an individual with a fitness as low as possible.
+	The goal of GP is to evolve an individual with as low a fitness as possible.
 	
 \end{frame}
 
@@ -178,10 +175,14 @@
 	
 	Neo4j is a graph database.
 		\begin{itemize}
-		\item Relatively new tool (initial release 2007 popularized in 2010).
-		\item Information is stored like a graph.
-		\item Nodes and relationships.
-		\item Efficient recursive queries compared with traditional databases.
+		\item relatively new tool
+			\begin{itemize}
+			\item initial release 2007
+			\item popularized in 2010
+			\end{itemize}
+		\item information is stored using a graph
+		\item nodes and relationships
+		\item efficient recursive queries compared with traditional databases
 		\end{itemize}
 
 \end{frame}
@@ -224,7 +225,7 @@ RETURN parent, child;
 
 \begin{frame}
 \frametitle{Run Configurations}
-\begin{description}
+\begin{description}[align=left, leftmargin=*]
 \item[Target Function] sin(x)
 \item[Variables] x (range from 0.0 to 6.2, incremented by steps of 0.1)
 \item[Constants] range between -5.0 and 5.0
