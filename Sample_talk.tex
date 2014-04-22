@@ -226,15 +226,17 @@ RETURN parent, child;
 \begin{frame}
 \frametitle{Run Configurations}
 \begin{description}[align=left, leftmargin=*]
+{\small
 \item[Target Function] sin(x)
-\item[Variables] x (range from 0.0 to 6.2, incremented by steps of 0.1)
+\item[Variables] x (range 0.0 to 6.2, incremented by steps of 0.1)
 \item[Constants] range between -5.0 and 5.0
 \item[Operations] addition (+), subtraction (-), multiplication (*), protected division (/)
 \item[Generation Number] 100
-\item[Population Size Per Generation] 1000 (6 runs) and 10000 (1 run)
-\item[Transformation Percentages] Crossover (90\%), Mutation (1\%), Reproduction (9\%)
+\item[Population Size Per Gen] 1000 (6 runs) and 10000 (1 run)
+\item[Transform Percentages] crossover (90\%), mutation (1\%), reproduction (9\%)
 \item[Elitism] best 1\%
-\item[Fitness] Absolute error between target function and individual function.
+\item[Fitness] absolute error between target function and individual function
+}
 \end{description}
 \end{frame}
 
