@@ -131,15 +131,26 @@
 \end{frame}
 
 \begin{frame}
-  \frametitle{Transformations}
-
-		\begin{description}[align=left, leftmargin=*]
-		\item[Crossover (XO)] sexual reproduction (root and non-root)
+\frametitle{Transformations}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+{\footnotesize
+		\begin{description}
+		\item[Crossover] sexual reproduction (root and non-root)
 		\item[Mutation] subtrees altered
 		\item[Reproduction] asexual reproduction
 		\item[Elitism] reproduction based on fitness
 		\end{description}
+}
+\end{column}
+\begin{column}{0.45\textwidth}
+\includegraphics[width=.7\textwidth]{crossover-root-and-nonroot.png} \\
+\tiny{Richard Poli, William B. Langdon, Nicholas F. McPhee \\ \url{http://dces.essex.ac.uk/staff/rpoli/gp-field-guide/A_Field_Guide_to_Genetic_Programming.pdf}}
+\end{column}
+\end{columns}
+\begin{center}
 \includegraphics[width=.95\textwidth]{XO_path_example.pdf}
+\end{center}
 \end{frame}
 
 \subsection{Symbolic Regression and Fitness}
