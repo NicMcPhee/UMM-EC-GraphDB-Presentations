@@ -78,8 +78,6 @@
 \begin{frame}
   \frametitle{The Big Picture}
   
-  \begin{columns}
-  \begin{column}{0.55\textwidth}
   \begin{itemize}
 	\item Genetic programming demonstrated to be effective for a variety of applications.
 	\item Difficult to determine how this process works.
@@ -87,13 +85,8 @@
 	\item Graph databases more efficient at this task than relational databases.
 	\item This knowledge may be used to improve genetic programming algorithms.
   \end{itemize}
-  \end{column}
-  \begin{column}{0.45\textwidth}
-   \includegraphics[width=0.95\textwidth]{graphdb-neo4j.png}
-       \\
-    \only{\tiny{Neo4j \\ \url{http://www.neo4j.org/learn/graphdatabase} }}
-  \end{column}
-  \end{columns}
+
+  
 \end{frame}
 
 \subsection*{Outline}
@@ -111,7 +104,7 @@
   \frametitle{Genetic Programming Overview}
   \begin{center}
   \includegraphics[width=.60\textwidth]{mona_lisa.jpg} \\
-  \tiny{Roger Alsing \\ \url{http://io9.com/5106124/a-computer-program-that-taught-itself-to-draw-the-mona-lisa} }
+  \tiny{Roger Alsing \ \url{http://goo.gl/kqsEP} }
 
   \end{center}
  
@@ -136,7 +129,7 @@
 \begin{column}{0.55\textwidth}
 {\footnotesize
 		\begin{description}
-		\item[Crossover] sexual reproduction (root and non-root)
+		\item[Crossover] sexual reproduction \\ (root and non-root)
 		\item[Mutation] subtrees altered
 		\item[Reproduction] asexual reproduction
 		\item[Elitism] reproduction based on fitness
@@ -144,8 +137,9 @@
 }
 \end{column}
 \begin{column}{0.45\textwidth}
-\includegraphics[width=.7\textwidth]{crossover-root-and-nonroot.png} \\
-\tiny{Richard Poli, William B. Langdon, Nicholas F. McPhee \\ \url{http://dces.essex.ac.uk/staff/rpoli/gp-field-guide/A_Field_Guide_to_Genetic_Programming.pdf}}
+{\tiny \ \ \ \ \ \ Root \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Non-Root \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Child}
+\includegraphics[width=.95\textwidth]{subtreeCrossover.jpg} \\
+{\tiny \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \url{geneticprogramming.us}}
 \end{column}
 \end{columns}
 \begin{center}
@@ -184,7 +178,11 @@
 \begin{frame}
 	\frametitle{Neo4j}
 	
-	Neo4j is a graph database.
+	
+	
+\begin{columns} 
+\begin{column}{0.60 \textwidth}
+Neo4j is a graph database.
 		\begin{itemize}
 		\item relatively new tool
 			\begin{itemize}
@@ -195,6 +193,13 @@
 		\item nodes and relationships
 		\item efficient recursive queries compared with traditional databases
 		\end{itemize}
+		\end{column}
+		\begin{column}{0.40\textwidth}
+   \includegraphics[width=0.95\textwidth]{graphdb-neo4j.png}
+       \\
+    \only{\tiny{Neo4j \ \url{http://goo.gl/nzRWSV}}}
+  \end{column}
+  \end{columns}
 
 \end{frame}
 
@@ -258,7 +263,7 @@ RETURN parent, child;
 \begin{frame}
 \frametitle{Questions Asked}
 \begin{enumerate}
-\item \emph{What does the fitness of the ``winning'' root parent ancestry line look like over time?}
+\item \emph{What does the fitness of the ``winning'' parent ancestry line look like over time?}
 \item \emph{How often do mutations improve fitness? Also, how often do crossovers improve fitness, where the root parent is more fit than the non-root parent, and vice versa?}
 \item \emph{Do a group of individuals have a common root parent ancestor and what is the latest generation where such an ancestor occurs?}
 \item \emph{How many individuals in the initial generation have any root parent descendants in the final generation?}
@@ -269,7 +274,7 @@ RETURN parent, child;
 
 \begin{frame}
 \frametitle{Fitness Over Time}
-\emph{What does the fitness of the ``winning'' root parent ancestry line look like over time?}
+\emph{What does the fitness of the ``winning'' parent ancestry line look like over time?}
 \begin{center}
 \includegraphics[width=0.85\textwidth]{Combined_fitness_over_time_no_dashed}
 \end{center}
@@ -303,7 +308,7 @@ RETURN parent, child;
 \frametitle{Conclusions}
 
 \begin{itemize}
-\item We can gather internal data.
+\item We can gather internal data efficiently.
 \item Provides more in depth information than statistical summaries. 
 \item Support for hypotheses.
 \end{itemize}
