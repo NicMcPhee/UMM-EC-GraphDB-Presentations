@@ -229,7 +229,7 @@ START parent=node(43)
 \linebreak
 MATCH (parent)-[:PARENTOF]->(child)
 \linebreak
-WHERE id(child) < 47
+\textbf{WHERE id(child) < 47}
 \linebreak
 RETURN parent, child;
 }
@@ -267,8 +267,8 @@ RETURN parent, child;
 \frametitle{Questions Asked}
 \begin{enumerate}
 \item \emph{What does the fitness of the ``winning'' individual's ancestry line look like over time?}
-\item \emph{How often do mutations improve fitness? Also, how often do crossovers improve fitness, where the root parent is more fit than the non-root parent, and vice versa?}
-\item \emph{Do a group of individuals have a common root parent ancestor and what is the latest generation where such an ancestor occurs?}
+\item \emph{How often does mutation improve fitness? Also, how often does crossover improve fitness, where the root parent is more fit than the non-root parent, and vice versa?}
+\item \emph{Does a group of individuals have a common root parent ancestor and what is the latest generation where such an ancestor occurs?}
 \item \emph{How many individuals in the initial generation have any root parent descendants in the final generation?}
 \end{enumerate}
 \end{frame}
@@ -287,7 +287,7 @@ RETURN parent, child;
 
 \begin{frame}
 \frametitle{Percentage of Improved Transformations}
-\emph{How often do mutations and crossovers improve fitness?}
+\emph{How often does mutation and crossover improve fitness?}
 \begin{center}
 {\tiny Results for Three 1,000 Individual Runs and One 10,000 Individual Run}
 \includegraphics[width=0.95\textwidth]{All_percentages_over_time}
@@ -298,7 +298,7 @@ RETURN parent, child;
 
 \begin{frame}
 \frametitle{Common Ancestor}
-\emph{Do a group of individuals have a common root parent ancestor and how many initial generation individuals have descendants in the final generation?}
+\emph{Does a group of individuals have a common root parent ancestor and how many initial generation individuals have descendants in the final generation?}
 \begin{center}
 \includegraphics[height=0.70\textheight]{subset_confluence_trimmed}
 \end{center}
