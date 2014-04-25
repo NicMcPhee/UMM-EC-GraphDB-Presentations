@@ -228,6 +228,8 @@ START parent=node(43)
 \linebreak
 MATCH (parent)-[:PARENTOF]->(child)
 \linebreak
+WHERE id(child) < 47
+\linebreak
 RETURN parent, child;
 }
 
