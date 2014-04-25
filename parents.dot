@@ -1,0 +1,9 @@
+digraph G {
+    43 [penwidth=4];
+    45 [penwidth=4];
+    46 [penwidth=4];
+    43 -> 45;
+    43 -> 46;
+    43 -> 47;
+    43 -> 48;
+}
