@@ -229,7 +229,7 @@ These are not unlike queries in relational databases.
 \end{frame}
 
 \begin{frame}
-\frametitle{Finding ancestry of an individual}
+\frametitle{Ancestry of an individual (hard for relational DBs)}
 
 Find all the root ancestors of individual 99,000:
 
@@ -250,10 +250,6 @@ Find the fitness of all the root ancestors of individual 99,000:
 match ps = (n)<-[:ELITISM|PARENTOF|ROOT\_XOOF|MUTANTOF*]-(p) where p.generation=1 \\
 return extract(x in nodes(ps) | x.fitness);
 }
-
-~
-
-These sorts of recursive queries much more complex and expensive in relational DBs.
 
 \end{frame}
 
