@@ -288,14 +288,19 @@ return extract(x in nodes(ps) | x.fitness);
 \end{center}
 \end{frame}
 
-\subsection[Common Ancestor]{Common Ancestor}
+\subsection{Common Ancestor(s)}
 
 \begin{frame}
 \frametitle{Common Ancestor}
 \emph{How far back to a common root parent ancestor? How many initial generation individuals have descendants in the final generation?}
 \begin{columns}
 \begin{column}{0.55\textwidth}
-In run w/ 10K individuals for 100 gens: \textcolor{red}{\emph{find results from MICS paper}}
+In run w/ 10K individuals for 100 gens:
+\begin{itemize}
+	\item Final pop consists of 2 clades
+	\item One clade \emph{strongly} dominates (only 24 left in small clade)
+	\item Each clade root-descends from single individual in initial population
+\end{itemize}
 \end{column}
 \begin{column}{0.45\textwidth}
 \begin{center}
@@ -310,21 +315,24 @@ In run w/ 10K individuals for 100 gens: \textcolor{red}{\emph{find results from 
 \begin{frame}
 \frametitle{Conclusions}
 
+Conclusions
 \begin{itemize}
-\item We can gather internal data efficiently.
-\item Provides more in depth information than statistical summaries. 
-\item Support for hypotheses.
+\item We can collect \& extract useful data about evolutionary dynamics
+\item More detailed analysis that moves beyond statistical summaries
+\item Suggests interesting avenues to explore
+	\begin{itemize}
+		\item Importance of having root parent be more fit
+		\item Changing role of mutation over the life of a run
+		\item Potential for clades/quasi-species and their impact
+	\end{itemize}
 \end{itemize}
-\linespace
-\linespace
-\linespace
-\linespace
+
+~
 
 Future Work
 \begin{itemize}
-\item Trying different setup configurations.
-\item Enforcing the root parent to have better fitness in XO.
-\item Dynamically change parameters.
+\item Enforcing the root parent to have better fitness in XO
+\item Exploring equivalents in other EC systems (e.g., Push)
 \end{itemize}
 \end{frame}
 
@@ -332,19 +340,19 @@ Future Work
 	\frametitle{Thanks!}
 	
 	Thank you for your time and attention!
-		
-	\linespace
-	\linespace
+
+~
 	
-	Contacts:  
+	Contact:
 	\begin{itemize}
-		\item \texttt{donat056@morris.umn.edu}
-		\item \texttt{dramd002@morris.umn.edu}
 		\item \texttt{mcphee@morris.umn.edu}
+		\item Twitter @NicMcPhee
+		\item Paper: \url{https://github.com/NicMcPhee/MICS-2014-GraphDB-EC}
 	\end{itemize}
-	
-	\linespace
-	\linespace
+
+~
+
+Big thanks to David Donatucci and Kirbie Dramdahl for their many contributions to this work.
 	
 	\begin{center}
 	{\huge Questions?}
@@ -360,11 +368,9 @@ Future Work
 {\tiny \bibliography{MICS_2014}}
 \end{frame} 
 
-\end{document}
+% \section[Setup]{Experimental Setup}
 
-\section[Setup]{Experimental Setup}
-
-\subsection{Configurations}
+% \subsection{Configurations}
 
 \begin{frame}
 \frametitle{Run Configurations}
@@ -383,5 +389,4 @@ Future Work
 \end{description}
 \end{frame}
 
-
-
+\end{document}
