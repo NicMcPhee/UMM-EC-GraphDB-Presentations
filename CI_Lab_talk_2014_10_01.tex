@@ -310,12 +310,11 @@ In run w/ 10K individuals for 100 gens:
 \end{columns}
 \end{frame}
 
-\section[Conclusions]{Conclusions}
+\section{Conclusions and future work}
 
 \begin{frame}
 \frametitle{Conclusions}
 
-Conclusions
 \begin{itemize}
 \item We can collect \& extract useful data about evolutionary dynamics
 \item More detailed analysis that moves beyond statistical summaries
@@ -329,10 +328,34 @@ Conclusions
 
 ~
 
-Future Work
+Concerns about scaling
 \begin{itemize}
-\item Enforcing the root parent to have better fitness in XO
-\item Exploring equivalents in other EC systems (e.g., Push)
+	\item Can we do lots of runs in parallel pouring data into a central DB?
+	\item Can runs be distributed across the network and still perform well?
+	\item How much memory is needed to work with large datasets?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Future work}
+
+Requiring the root parent to have better fitness in XO
+\begin{itemize}
+	\item Explore its impact across a variety of problems
+	\item Explore equivalents in other EC systems
+	\begin{itemize}
+		\item What's the ``equivalent'' (if any) in Push?
+		\item Ensure parent that contributes the tail is more fit?
+	\end{itemize}
+\end{itemize}
+
+~
+
+Dynamically set parameters
+\begin{itemize}
+	\item This has been done a lot, but usually in an ad hoc way.
+	\item Can we use data collected from runs to do this in a more principled way?
 \end{itemize}
 \end{frame}
 
