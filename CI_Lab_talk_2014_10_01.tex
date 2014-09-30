@@ -281,9 +281,9 @@ return extract(x in nodes(ps) | x.fitness);
 
 \begin{frame}
 \frametitle{Percentage of Improved Transformations}
-\emph{How often does mutation and crossover improve fitness?}
+\emph{How often do mutation and crossover improve fitness?}
 \begin{center}
-{\tiny Results for Three 1,000 Individual Runs and One 10,000 Individual Run}
+{\tiny Results for one 10,000 individual run and three 1,000 individual runs}
 \includegraphics[width=0.95\textwidth]{All_percentages_over_time}
 \end{center}
 \end{frame}
@@ -292,11 +292,17 @@ return extract(x in nodes(ps) | x.fitness);
 
 \begin{frame}
 \frametitle{Common Ancestor}
-\emph{Does a group of individuals have a common root parent ancestor and how many initial generation individuals have descendants in the final generation?}
+\emph{How far back to a common root parent ancestor? How many initial generation individuals have descendants in the final generation?}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+In run w/ 10K individuals for 100 gens: \textcolor{red}{\emph{find results from MICS paper}}
+\end{column}
+\begin{column}{0.45\textwidth}
 \begin{center}
 \includegraphics[height=0.70\textheight]{subset_confluence_trimmed}
 \end{center}
-
+\end{column}
+\end{columns}
 \end{frame}
 
 \section[Conclusions]{Conclusions}
